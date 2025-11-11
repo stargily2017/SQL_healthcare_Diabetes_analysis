@@ -1,5 +1,5 @@
 # "Diagnostic analysis in diabetes healthcare"
-Executive Summary
+### Executive Summary
 Using SQL, I pulled 10 years of 70,000 unique patient diabetes data from the database to get a clear picture of their medications, hemoglobin levels, hospital stays, and readmission rates. Imagine working alongside colleagues who frequently need time off for diabetes-related hospital visits. It’s a familiar scene at my workplace, and it sparked my curiosity about how diabetes care is managed in hospitals. This analysis of an extensive clinical database examines the historical pattern of diabetes care among patients admitted to a US hospital and provides future directions to improve patient safety. I recommend that hospitals offer better diabetes management plans and reduce the readmission rates. 
 
 ### Why I Chose This Project
@@ -28,6 +28,15 @@ The origin of this data set comes from here: The origin of this data set come fr
 You can learn more about this data set here. 
 
 ### Descriptive and diagnostic analysis 
+Focus on how many days patients stayed in the hospital
+SELECT round(CAST(time_in_hospital AS Decimal), 1) AS Time_in_days,
+count(*) AS patients_count,
+rpad('', count(*)/200,'*') AS bar
+FROM health
+group by Time_in_days
+order by Time_in_days Desc;
+
+
 ### Results and Personal Reflections:
 Created SQL queries to extract patients' historical data. The challenge of uncovering gender disparities in treatment was eye-opening. Females have a higher readmission rate despite receiving fewer medications than males. Analysis shows that Insulin, Metformin, Glypizide, and Glyburide are the most popular diabetes medications. Hospitals could provide awareness about diabetes, including their diet and daily routine. It helps to decrease the diabetes rate and improve health. Moving forward, I aim to leverage these insights to drive actionable improvements in diabetes care.
 
