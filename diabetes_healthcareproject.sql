@@ -20,7 +20,7 @@ and avg(num_procedures) >2.5
 order by avg_procedures DESC;
 
 ---------------------------------------------
-/
+
 #2.Hyperglycemia has a significant role in hospital admissions.
 #I found out which common medications patients use —are they the popular ones? 
 #Also, which age group uses the top-ranked medication?
